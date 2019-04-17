@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "e2ea306e-40f2-4b29-b267-90ad91df609a",
+		"name": "GraphQL",
+		"description": "Sinatra with GraphQL Sample App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search for Speakers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query\": \"{ speakers { name twitterHandle bio } }\"\n}"
+				},
+				"url": {
+					"raw": "localhost:9292/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Search for speakers using GraphQL"
+			},
+			"response": []
+		}
+	]
+}

@@ -17,3 +17,4 @@ gem 'sqlite3'
 
 # Gem GraphQL
 gem 'graphql'
+gem 'rack-contrib'
