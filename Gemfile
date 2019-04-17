@@ -4,7 +4,16 @@ source 'https://rubygems.org'
 
 ruby '2.5.0'
 
-gem 'graphql'
-gem 'sinatra'
-gem 'shotgun'
+# Sinatra
 gem 'rack'
+gem 'rake'
+gem 'shotgun'
+gem 'sinatra'
+
+# ActiveRecord and database
+gem 'activerecord'
+gem 'sinatra-activerecord'
+gem 'sqlite3'
+
+# Gem GraphQL
+gem 'graphql'

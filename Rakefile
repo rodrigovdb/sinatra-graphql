@@ -2,4 +2,4 @@
 
 require './app'
 
-run App
+require 'sinatra/activerecord/rake'

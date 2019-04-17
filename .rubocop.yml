@@ -1,0 +1,48 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - run*.rb
+    - tmp/**/*
+    - 'runners/*'
+  TargetRubyVersion: 2.5
+
+Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 500
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ParameterLists:
+  Exclude:
+    - 'app/concepts/**/operations/**'
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: aligned
+
+Style/ParallelAssignment:
+  Enabled: false
