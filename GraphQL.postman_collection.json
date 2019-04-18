@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Search for Speakers",
+			"name": "Search for Artists",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -20,7 +20,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"query\": \"{ speakers { name twitterHandle bio } }\"\n}"
+					"raw": "{ \"query\": \"{ artists { name songs { name key duration } } }\" }"
 				},
 				"url": {
 					"raw": "localhost:9292/graphql",
@@ -31,8 +31,36 @@
 					"path": [
 						"graphql"
 					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search for Songs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"query\": \"{ songs { name key duration } }\" }"
 				},
-				"description": "Search for speakers using GraphQL"
+				"url": {
+					"raw": "localhost:9292/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"graphql"
+					]
+				}
 			},
 			"response": []
 		}
