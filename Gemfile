@@ -18,3 +18,7 @@ gem 'sqlite3'
 # Gem GraphQL
 gem 'graphql'
 gem 'rack-contrib'
+
+# Faker stuffs
+gem 'pry'
+gem 'faker'

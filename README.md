@@ -8,6 +8,7 @@
 After have your workcopy cloned into your machine, run
 ```
 $ bundle install
+$ rake db:create db:migrate db:seed
 ```
 
 ## Running locally
@@ -27,7 +28,9 @@ $ bundle exec rackup -o 0.0.0.0
 Import `GraphQL.postman_collection.json` into your Postman or
 
 ```
-$ curl -X POST -H 'Content-Type: application/json' http://localhost:9292/graphql --data '{ "query": "{ speakers { name twitterHandle bio } }" }'
+$ curl -X POST -H 'Content-Type: application/json' http://localhost:9292/graphql  --data '{ "query": "{ artists { name songs { name key duration } } }" }'
+
+$ curl -X POST -H 'Content-Type: application/json' http://localhost:9292/graphql  --data '{ "query": "{ songs { name key duration } }" }'
 ```
 
 ## External references
