@@ -12,10 +12,6 @@ class App < Sinatra::Base
 
   use Rack::PostBodyContentTypeParser
 
-  get '/' do
-    { hello: :world }.to_json
-  end
-
   post '/graphql' do
     result = AppSchema.execute(
       params[:query],
@@ -24,11 +20,5 @@ class App < Sinatra::Base
     )
 
     result.to_json
-  end
-
-  get '/speakers' do
-    @speakers = Speaker.all
-
-    @speakers.to_json
   end
 end
