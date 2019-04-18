@@ -1,20 +1,24 @@
 # frozen_string_literal: true
 
+require 'rack/contrib'
 require 'sinatra/base'
 require 'sinatra/activerecord'
 
 require './app/models'
+require './app/graphql'
 
 class App < Sinatra::Base
   set :database_file, 'config/database.yml'
 
-  get '/' do
-    { hello: :world }.to_json
-  end
+  use Rack::PostBodyContentTypeParser
 
-  get '/speakers' do
-    @speakers = Speaker.all
+  post '/graphql' do
+    result = AppSchema.execute(
+      params[:query],
+      variables: params[:variables],
+      context: { current_user: nil }
+    )
 
-    @speakers.to_json
+    result.to_json
   end
 end
