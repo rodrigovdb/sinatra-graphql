@@ -12,6 +12,10 @@ class App < Sinatra::Base
 
   use Rack::PostBodyContentTypeParser
 
+  before do
+    content_type 'application/json'
+  end
+
   post '/graphql' do
     result = AppSchema.execute(
       params[:query],

@@ -2,7 +2,7 @@
 
 require 'graphql'
 
-require_relative 'base'
+require_relative 'base_type'
 
 class Types::Song < Types::BaseObject
   description 'Artist Object Type'
