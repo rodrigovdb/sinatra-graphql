@@ -5,5 +5,6 @@ require 'graphql'
 require_relative 'query'
 
 class AppSchema < GraphQL::Schema
-  query QueryType
+  query Types::QueryType
+  mutation Types::MutationType
 end

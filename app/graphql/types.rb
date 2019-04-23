@@ -3,14 +3,14 @@
 require 'graphql'
 
 module Types
-  class Artist < GraphQL::Schema::Object
+  class ArtistType < GraphQL::Schema::Object
     description 'Artist Object Type'
 
     field :id,    ID, null: false
     field :name,  String, null: false
   end
 
-  class Song < GraphQL::Schema::Object
+  class SongType < GraphQL::Schema::Object
     description 'Artist Object Type'
 
     field :id,        ID, null: false
@@ -18,10 +18,10 @@ module Types
     field :key,       String, null: true
     field :duration,  Integer, null: true
     field :chords,    String, null: true
-    field :artist,    Artist, null: false
+    field :artist,    ArtistType, null: false
   end
 
-  class Artist < GraphQL::Schema::Object
-    field :songs, [Song], null: true
+  class ArtistType < GraphQL::Schema::Object
+    field :songs, [SongType], null: true
   end
 end
