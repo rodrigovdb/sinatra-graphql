@@ -20,5 +20,5 @@ gem 'graphql'
 gem 'rack-contrib'
 
 # Faker stuffs
-gem 'pry'
 gem 'faker'
+gem 'pry'
