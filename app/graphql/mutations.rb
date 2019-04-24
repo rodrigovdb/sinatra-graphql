@@ -3,8 +3,7 @@
 require 'graphql'
 
 require_relative 'types'
-require_relative 'mutations/artists_mutation'
-require_relative 'mutations/songs_mutation'
+Dir.glob(Pathname(__FILE__).sub_ext('/*.rb'), &method(:require))
 
 module Types
   class MutationType < GraphQL::Schema::Object
