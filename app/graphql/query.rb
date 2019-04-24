@@ -3,7 +3,6 @@
 require 'graphql'
 
 require_relative 'types'
-# require_relative 'mutations'
 
 module Types
   class QueryType < GraphQL::Schema::Object
