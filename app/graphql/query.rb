@@ -13,6 +13,7 @@ module Types
     ####################
     field :artists, [ArtistType], null: false do
       description 'Get all artists of the system'
+      argument :limit, Integer, required: false, default_value: 20
     end
 
     field :artist, ArtistType, null: true do
@@ -20,9 +21,10 @@ module Types
       argument :id, ID, required: true
     end
 
-    def artists
+    def artists(limit:)
       Artist.includes(:songs)
             .order(:name)
+            .limit(limit)
     end
 
     def artist(id:)
@@ -34,6 +36,7 @@ module Types
     #################
     field :songs, [SongType], null: false do
       description 'Get all songs of the system'
+      argument :limit, Integer, required: false, default_value: 20
     end
 
     field :song, SongType, null: true do
@@ -41,8 +44,10 @@ module Types
       argument :id, ID, required: true
     end
 
-    def songs
-      Song.all.order(:name)
+    def songs(limit:)
+      Song.all
+          .order(:name)
+          .limit(limit)
     end
 
     def song(id:)
