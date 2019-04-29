@@ -29,4 +29,14 @@ module Types
       object.songs.count
     end
   end
+
+  class UserType < GraphQL::Schema::Object
+    field :id,            ID,      null: false
+    field :name,          String,  null: false
+    field :access_token,  String,  null: true
+
+    # Exposing `email` just for tutorial purposes.
+    # In real application shouldn't leak user emails.
+    field :email, String, null: false
+  end
 end

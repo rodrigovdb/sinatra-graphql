@@ -7,6 +7,8 @@ Dir.glob(Pathname(__FILE__).sub_ext('/*.rb'), &method(:require))
 
 module Types
   class MutationType < GraphQL::Schema::Object
+    field :create_user,   mutation: ::Mutations::CreateUser
+
     field :create_artist, mutation: ::Mutations::CreateArtist
     field :update_artist, mutation: ::Mutations::UpdateArtist
     field :delete_artist, mutation: ::Mutations::DeleteArtist

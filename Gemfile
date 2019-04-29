@@ -22,3 +22,6 @@ gem 'rack-contrib'
 # Faker stuffs
 gem 'faker'
 gem 'pry'
+
+# Authentication stuffs
+gem 'bcrypt'

@@ -10,4 +10,3 @@ module Resolvers
     # argument_class Arguments::Base
   end
 end
-
