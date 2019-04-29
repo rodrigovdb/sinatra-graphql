@@ -8,6 +8,9 @@ module Types
   class QueryType < GraphQL::Schema::Object
     description 'The query root of this schema'
 
+    ## User authentication ##
+    field :authenticate_user, resolver: Resolvers::AuthenticateUser
+
     ## Artists stuffs ##
     field :artists, resolver: Resolvers::SearchArtists
     field :artist,  resolver: Resolvers::FindArtist

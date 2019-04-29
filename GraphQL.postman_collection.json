@@ -318,6 +318,34 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Authenticate User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"query\": \"{ authenticateUser(email:\\\"rodrigovdb@gmail.com\\\" password:\\\"rapadura\\\") { id name email accessToken } }\" }"
+				},
+				"url": {
+					"raw": "localhost:9292/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
