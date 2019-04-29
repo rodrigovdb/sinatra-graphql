@@ -20,7 +20,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"query\": \"{ artists { id name countSongs } }\" }"
+					"raw": "{ \"query\": \"{ artists(limit: 3) { id name countSongs } }\" }"
 				},
 				"url": {
 					"raw": "localhost:9292/graphql",
@@ -49,7 +49,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"query\": \"{ songs { id name key duration artist { name } } }\" }"
+					"raw": "{ \"query\": \"{ songs(limit: 3) { id name key duration artist { name } } }\" }"
 				},
 				"url": {
 					"raw": "localhost:9292/graphql",
@@ -78,7 +78,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"query\": \"{ artist(id: 3) { id name countSongs songs { id name key duration } } }\" }"
+					"raw": "{ \"query\": \"{ artist(id: 15) { id name countSongs songs { id name key duration } } }\" }"
 				},
 				"url": {
 					"raw": "localhost:9292/graphql",
@@ -106,7 +106,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"query\": \"{ song(id: 59) { id name key duration chords artist { id name } } }\" }"
+					"raw": "{ \"query\": \"{ song(id: 61) { id name key duration chords artist { id name } } }\" }"
 				},
 				"url": {
 					"raw": "localhost:9292/graphql",
@@ -277,6 +277,34 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{ \"query\": \"mutation { deleteArtist(id: 14) { id name songs { id name duration key } } }\" }"
+				},
+				"url": {
+					"raw": "localhost:9292/graphql",
+					"host": [
+						"localhost"
+					],
+					"port": "9292",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"query\": \"mutation { createUser(name: \\\"rodrigovdb\\\" email:\\\"rodrigovdb@gmail.com\\\" password: \\\"rapadura\\\" passwordConfirmation: \\\"rapadura\\\") { id name email accessToken } }\" }"
 				},
 				"url": {
 					"raw": "localhost:9292/graphql",
