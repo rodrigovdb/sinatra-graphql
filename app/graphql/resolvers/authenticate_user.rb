@@ -12,9 +12,11 @@ class Resolvers::AuthenticateUser < Resolvers::Base
 
   def resolve(email:, password:)
     user = User.find_by(email: email)
-
     return unless user
 
-    user.authenticate(password) || nil
+    user = user.authenticate(password)
+    return unless user
+
+    context[:session][:current_user] = user
   end
 end

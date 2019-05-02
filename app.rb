@@ -12,6 +12,8 @@ class App < Sinatra::Base
 
   use Rack::PostBodyContentTypeParser
 
+  enable :session
+
   before do
     content_type 'application/json'
   end
@@ -20,7 +22,10 @@ class App < Sinatra::Base
     result = AppSchema.execute(
       params[:query],
       variables: params[:variables],
-      context: { current_user: nil }
+      context: {
+        session: session,
+        current_user: session[:current_user]
+      }
     )
 
     result.to_json

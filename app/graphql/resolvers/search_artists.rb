@@ -6,6 +6,8 @@ class Resolvers::SearchArtists < Resolvers::Base
   argument :limit, Integer, required: false, default_value: 20
 
   def resolve(limit:)
+    authenticate
+
     Artist.includes(:songs)
           .order(:name)
           .limit(limit)
